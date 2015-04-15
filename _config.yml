@@ -1,8 +1,8 @@
 # Site settings
-title: Clean Blog
+title: from Blog import *
 header-img: img/home-bg.jpg
-email: your-email@yourdomain.com
-description: "Write your site description here. It will be used as your sites meta description as well!"
+email: Ajohnson88@gmail.com
+description: "A blog about my quest to become a developer."
 baseurl: ""
 url: "http://yourdomain.com"
 twitter_username: SBootstrap
