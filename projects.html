@@ -12,7 +12,7 @@ header-img: "img/contact-bg.jpg"
         <a href="http://steamscout.herokuapp.com/"><b>SteamScout</b></a>
         <br>
         <ul>
-            <li><p>Steamscout allows users to recieve notifications when games they've selected
+            <li><p>Steamscout allows users to receive notifications when games they've selected
             drop below a specified threshold. *Automatic notifications are not currently enabled*</p></li>
             <li><a href="https://github.com/rmotr/002-pyp-demoday-g1"><b>Github<b></a></li>
         </ul>
@@ -21,5 +21,8 @@ header-img: "img/contact-bg.jpg"
 
 <script language="javascript" type="text/javascript">
     var links= document.getElementsByTagName("a");
-    links.style.setProperty("color","#87C540", null)
+    for(var i=0; i < links.length; i++){      
+        links.item(i).style.setProperty("color","#87C540", null);
+    }
+    
 </script>
