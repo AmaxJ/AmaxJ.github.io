@@ -1,6 +1,6 @@
 # Site settings
 title: from Blog import *
-header-img: img/matrix_tank.jpg
+header-img: img/tank_banner.jpg
 email: Ajohnson88@gmail.com
 description: "A blog about my quest to become a developer."
 baseurl: ""
