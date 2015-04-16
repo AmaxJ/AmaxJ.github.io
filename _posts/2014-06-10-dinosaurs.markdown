@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Blog configuration"
+title:      "Getting Started"
 subtitle:   
 date:       2015-04-15 12:00:00
 author:     "Alan"
@@ -8,12 +8,14 @@ header-img: "img/frustration.jpg"
 ---
 
 <h1>First post!</h1> <br>
-<h3>...kind of.</h3>
 
-<p>So this is the reboot of my blog. Right now things aren't exactly as i'd like them to be regarding the layout. I've had some issues so far, mostly due to having no experience with jekyll. Initially I tried to make changes to the structure of the blog by editing the HTML directly, but I guess jekyll automatically generates the html templates somehow, because any direct changes i've made get reverted upon refreshing. Frustrating! So if you click on a link, or button, and it takes you somewhere you didn't expect... Well, I'll work on getting that fixed soon.</p>
 
-<p>But no matter! I've got the basic frame laid out. I'll tie up the loose ends at a later date when I have some more time available. What i'd really like is to be able to focus on generating some content for this blog. I had a post about my first impressions of the flask framework on my previous blog, I'll try to get that up and backdate it soon.</p>
+<p>So I've had a couple of issues getting everything set up, but now I think I've almost got everything how I want it. I'm beginnning to get the hang of jekyll and I think it's a pretty cool little platform. I'll probably continue to tinker with things as I get more familiar with it, so expect changes! Currently there are still a few loose ends, and also some things are still set to the theme's defaults, but I plan to tackle those soon and get everything sorted.</p>
 
-<h4>What's coming?</h4>
+<h4>Why am I doing this?</h4>
 
-<p>I plan to write detailed posts about the things that I learn in a way that is as accessible as possible to other new programmers. I think this will be a useful exercise and help me examine my own thinking. And just maybe, someone else out there will find it useful too. We'll see.</p>
+<p>I'm not usually inclined to publish my thoughts. My twitter account, which I opened in 2009, has a grand total of 10 tweets. My facebook account is also pretty quiet. I suppose there is something about the permanence of writing something and posting it for the world to see that makes me slightly uncomfortable. That being said, I plan to make an effort to regularly update this blog. I think it will be a good exercise and force me to examine my own thinking on different subjects, and there's no better way to analyze a thought process than to put it on paper (or on screen rather!)<p>
+
+<p>My focus will primarily be on things related to web development and technology, although I won't necessarily chain myself to those topics. I'll try to discuss the things I'm working on, and if someone else finds anything I've written to be helpful then I will consider this exercise to be a success.</p>
+
+<p>So that's all for my first post. I hope to get into some interesting things in the near future.</p>

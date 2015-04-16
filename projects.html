@@ -5,24 +5,25 @@ description:
 header-img: "img/contact-bg.jpg"
 ---
 
-<h2>Projects I've participated in:</h2><br><br>
+<h2>Projects I've contributed to:</h2><br><br>
 
 <ul>
     <li>
-        <a href="http://steamscout.herokuapp.com/"><b>SteamScout</b></a>
+        <a href="http://steamscout.herokuapp.com/" id="steamscout"><b>SteamScout</b></a>
         <br>
         <ul>
-            <li><p>Steamscout allows users to receive notifications when games they've selected
-            drop below a specified threshold. *Automatic notifications are not currently enabled*</p></li>
-            <li><a href="https://github.com/rmotr/002-pyp-demoday-g1"><b>Github<b></a></li>
+            <li><p>Steamscout is an application built on the Flask framework that utilizes PostgreSQL and Celery to let users track sales on <a href="wwww.store.steampowered.com">Steam.</a> When a selected game reaches the price threshold specified by the user, they receive an email notification. (Due to financial constraints notifications are currently disabled, but feel free to test it out on your local machine!)</p></li>
+
+            <li><a href="https://github.com/rmotr/002-pyp-demoday-g1" id="steamgit"><b>Github<b></a></li>
         </ul>
     </li>
 </ul>
 
 <script language="javascript" type="text/javascript">
-    var links= document.getElementsByTagName("a");
-    for(var i=0; i < links.length; i++){      
-        links.item(i).style.setProperty("color","#79A2BE", null);
-    }
+    var projects = [document.getElementById("steamscout"),
+                    document.getElementById("steamgit")];
+    for(i in projects){
+        projects[i].style.setProperty("color", "#0398D4")
+    };
     
 </script>
