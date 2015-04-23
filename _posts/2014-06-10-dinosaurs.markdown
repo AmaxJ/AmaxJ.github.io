@@ -14,7 +14,7 @@ header-img: "img/frustration.jpg"
 
 <h4>Why am I doing this?</h4>
 
-<p>I'm not usually inclined to publish my thoughts. My twitter account, which I opened in 2009, has a grand total of 10 tweets. My facebook account is also pretty quiet. I suppose there is something about the permanence of writing something and posting it for the world to see that makes me slightly uncomfortable. That being said, I plan to make an effort to regularly update this blog. I think it will be a good exercise and force me to examine my own thinking on different subjects, and there's no better way to analyze a thought process than to put it on paper (or on screen rather!)<p>
+<p>I don't have a very significant online presence. My twitter account, which I opened in 2009, has a grand total of 10 tweets. My facebook account is also pretty quiet. That being said, I will make an effort to regularly update this blog. I think it will be a good exercise and force me to examine my own thinking on different subjects, and there's no better way to analyze a thought process than to put it on paper (or on screen rather!)<p>
 
 <p>My focus will primarily be on things related to web development and technology, although I won't necessarily chain myself to those topics. I'll try to discuss the things I'm working on, and if someone else finds anything I've written to be helpful then I will consider this exercise to be a success.</p>
 
