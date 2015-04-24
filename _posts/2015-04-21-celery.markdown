@@ -44,8 +44,9 @@ header-img: "img/celery.JPG"
     <li><a href="http://kr.github.io/beanstalkd/">Beanstalk</a></li>
 </ul>
 
-<p>Once you have redis installed, open up a new terminal window and run <b>"redis-server"</b> to start it up. Not to bad! You should see this in your terminal window:</p>
+<p>Once you have redis installed, open up a new terminal window and run <b>"redis-server"</b> to start it up. You should see this in your terminal window:</p>
 
+<center>
 ![Alt text](img/redis.png)
 </center>
 
