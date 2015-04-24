@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Getting Started"
+title:      "initial commit"
 subtitle:   
 date:       2015-04-15 12:00:00
 author:     "Alan"

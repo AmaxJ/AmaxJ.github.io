@@ -1,25 +1,25 @@
 ---
 layout:     post
 title:      "Automated Tasks with Celery and Flask"
-subtitle:   "A mini-tutorial to get you started quickly"
-date:       2015-04-21 12:00:00
+subtitle:   "A mini-tutorial"
+date:       2015-04-24 12:00:00
 author:     "Alan"
 header-img: "img/celery.jpg"
 ---
 
 <h1>Celery and Flask</h1>
 
-<p>The Celery documentation can be confusing, or at least that was my experience. If you are building a flask app this article will hopefully boil down the process into a few steps that are easy to understand, and explicit in their instruction.</p>
+<p>The Celery documentation can be confusing. If you are building a flask app this article will hopefully boil down the process into a few steps that are easy to understand, and explicit in their instruction.</p><br>
 
-</h2>Lets automate!</h2>
+<h2>Lets automate!</h2>
 
 <p>Earlier this year I participated in building SteamScout, an app which allows users to track games on Steam and recieve an email alert when the game's price drops below a certain point. Breaking this problem down made it apparent we'd have to automate a few things. We narrowed it down to two tasks:</p>
 <ul>
-    <li><b>Updating the games database:</b></li>
+    <li><b>Updating the games database:</b></li><br>
         <ul>
             <li>Steam is constantly adding new games to their library. Scraping their games library at regular intervals would be necessary to keep our own games database current.</li>
-        </ul>
-    <li><b>Emailing a user if their selected game reached the specified price:</b></li>
+        </ul><br>
+    <li><b>Emailing a user if their selected game reached the specified price:</b></li><br>
     <ul>
         <li>This is actually two tasks in one. First we need to look at any games our users have added to their watch list, and check the current price of those games on the steam website. Then, if the price of the game is below the price threshold the user has indicated, we send them an email.</li>
     </ul>
@@ -31,11 +31,11 @@ header-img: "img/celery.jpg"
 <h2>Setting up a "Message Broker"</h2>
 <p>Celery requires a message broker to function. As tasks are created they are pushed onto a <a href="http://en.wikipedia.org/wiki/Queue_%28abstract_data_type%29">queue</a> stored on the broker. When it's time for those tasks to be executed, they are popped off the queue. The "message broker" is just a database, and there are a couple of options to choose from:</p>
 <ul>
-    <li><a href="http://redis.io/">Redis</a></li>
+    <li><a href="http://redis.io/">Redis</a></li><br>
     <ul>
         <li>This is what I used and what this article will focus on. If you're following along it's probably easiest to use this one. You can install redis by following the link or by running <b>pip install redis</b> from the command line.</li>
-    </ul>
-    <li><a href="http://www.rabbitmq.com/">RabbitMQ</a></li>
+    </ul><br>
+    <li><a href="http://www.rabbitmq.com/">RabbitMQ</a></li><br>
     <li><a href="http://kr.github.io/beanstalkd/">Beanstalk</a></li>
 </ul>
 
@@ -43,7 +43,7 @@ header-img: "img/celery.jpg"
 
 <center><img src="img/redis.png"></center>
 
-<p>Note the port location: <b>6379</b>. This will be important for when you configure the broker URL in your settings. Also note this is the address on your local machine only, and if you deploy to a platform this URL will be different.</p>
+<p>Note the port location: <b>6379</b>. This will be important for when you configure the broker URL in your settings. Also note this is the address on your local machine only, and if you deploy to a platform this URL will be different.</p><br>
 
 <h2>Instantiating a Celery object</h2>
 <p> The next step in this process is to create a celery object. I called this object 'celery' for obvious reasons, and for the rest of the article the object will be refered to this way. If you use a different name, remember to substitute it in. Anyway, this part will look familiar to you if you've been using python for a little bit:</p>
@@ -58,7 +58,7 @@ header-img: "img/celery.jpg"
 </center>
 
 <p>And that's it! Now in the same file you can add the functions you want to run at regular intervals, and register them as tasks for celery using the decorator <b>@celery.task</b>. Here's what the file looks like for Steamscout:</p>
-<center><img src="img/celeryobject.png" alt=""></center>
+<center><img src="img/celeryobject.png" alt=""></center><br>
 
 <h2>Celery settings</h2>
 <p>Your celery object needs some configuration before it can go to work for you. In your settings file create the following:<p>
@@ -66,17 +66,17 @@ header-img: "img/celery.jpg"
         <li><b>BROKER_URL = 'redis://localhost:6379/0'</b></li>
         <ul>
             <li>Remember when I said to note the port number for your redis server? There it is. This setting allows your celery object to connect to your message broker. Just remember that every time you want to run celery you need to also run a redis server.</li>
-        </ul>
+        </ul><br>
         <li><b>CELERY_RESULT_BACKEND = 'redis://localhost:6479/0'</b></li>
         <ul>
             <li>This is for storing the results from the tasks celery is executing for you. Depending on what you're using celery for, you may not need this.</li>
-        </ul>
-        <li><b>CELERY_TASK_SERIALIZER = 'json'</b></li>
+        </ul><br>
+        <li><b>CELERY_TASK_SERIALIZER = 'json'</b></li><br>
         <li><b>CELERYBEAT_SCHEDULE = {}</b></li>
         <ul>
             <li>This is where the magic happens. The CELERYBEAT setting is where you can designate when and how often you want your tasks to run. More detail on this setting in the next part.</li>
         </ul>
-    </ul>
+    </ul><br>
 
 <h3>Celerybeat</h3>
     <p>Here's the Steamscout celerybeat configuration:</p>
@@ -86,24 +86,24 @@ header-img: "img/celery.jpg"
         <li>'reset_game_database'</li>
         <ul>
             <li>This name has no significance except for you and others reading your code. You can assign any name for your task, although it's probably a good idea to have the name reflect what the task does.</li>
-        </ul>
-        <li><b>'task':'scheduler.reset_game_db'</li>
+        </ul><br>
+        <li><b>'task':'scheduler.reset_game_db'</b></li>
         <ul>
             <li>The 'task' is the function itself. The value for this key is of the format <b>[file_name].[function_name]</b>. In this instance, the file is "scheduler.py" and the function is "reset_game_db".</li>
-        </ul>
+        </ul><br>
         <li><b>'schedule':crontab(minute=0, hour=2)</b></li>
         <ul>
             <li>The crontab is what actually keeps track of when your task is going to be executed. hour=2 indicates that this task will execute on the 2nd hour (out of 24, think military time) of every day. <a href="http://celery.readthedocs.org/en/latest/userguide/periodic-tasks.html#id5">Go here</a> and scroll down to "Crontab schedules" to see a more detailed list of the possible arguments you can use to set up a schedule. It's pretty flexible!</li>
-        </ul>
+        </ul><br>
         <li><b>'args':()</b></li>
         <ul>
             <li>Now if the function which you've designated to be a celery task has any arguments, you'd put them here. reset_game_db() doens't have any, so I left this blank.</li>
         </ul>
     </ul>
 
-<p>And thats it! Now all that's left is starting your worker.</p>
+<p>Now all that's left is starting a worker.</p>
 
-<h2>Running a worker, starting a beat</h2>
+<h2>Running a worker, starting a Beat</h2>
 <p>The documentation for celery instructs you to run the following command in a new terminal to launch your celery worker:</p>
 <center>
     <p><b>celery -A [file_with_celery_object] worker</p>
@@ -115,7 +115,7 @@ header-img: "img/celery.jpg"
 
 <p>In my case, this looked like <b>celery -A scheduler.celery worker</b>. If you've been following along, you should see something like this:</p>
 <center><img src="img/celeryrun.png" alt=""></center>
-<p>Awesome! Now the last thing to do is run the celery beat, so that your worker can get assigned tasks at the interval you specified. In a separate terminal, run:</p>
+<p>Now the last thing to do is run the celery beat, so that your worker can get assigned tasks at the interval you specified. In a separate terminal, run:</p>
 <center>
     <p><b>celery -A [file_with_celery_object].[celery_object_name] beat</b></p>
 </center>
@@ -125,4 +125,4 @@ header-img: "img/celery.jpg"
 <center><img src="img/taskexecuted.png" alt=""></center>
 
 <h2>In conclusion</h2>
-<p>So that's all it takes to set up celery with your flask application. Not too bad! A little note I want to add is, if you're deploying your flask app to heroku, you'll need to add a new line to your procfile which reads <b>worker: celery -A [file_with_celery_object].[celey_object_name] worker -l INFO</b>, because to run a worker on heroku requires a separate dyno. Good luck! </p>
+<p>That's all it takes to set up Celery with a flask application. Hopefully someone found this helpful.</p>
