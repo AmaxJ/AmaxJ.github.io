@@ -2,7 +2,7 @@
 layout:     post
 title:      "Automated Tasks with Celery and Flask"
 subtitle:   "A mini-tutorial"
-date:       2015-04-24 12:00:00
+date:       2015-04-23 12:00:00
 author:     "Alan"
 header-img: "img/celery.JPG"
 ---
@@ -14,7 +14,7 @@ header-img: "img/celery.JPG"
 </style>
 <h1>Celery and Flask</h1>
 
-<p>The Celery documentation can be confusing. If you are building a flask app this article will hopefully boil down the process into a few steps that are easy to understand, and explicit in their instruction.</p><br>
+<p>The Celery documentation can be confusing. If you are building a flask app this article will hopefully boil down the process into a few steps that are easy to understand, and explicit in their instruction.</p>
 
 <h2>Lets automate!</h2>
 
@@ -102,7 +102,7 @@ header-img: "img/celery.JPG"
         </ul><br>
         <li class="code">'args':()</li><br>
         <ul>
-            <li>Now if the function which you've designated to be a celery task has any arguments, you'd put them here. reset_game_db() doens't have any, so I left this blank.</li>
+            <li>Now if the function which you've designated to be a celery task has any arguments, you'd put them here. reset_game_db() doesn't have any, so I left this blank.</li>
         </ul>
     </ul>
 
@@ -126,8 +126,8 @@ header-img: "img/celery.JPG"
 </center>
 <p>If it worked, you'll see something like this:</p>
 <center><img src="/img/celerybeatcli.png" alt=""/></center>
-<p>Now if you look back at the window where your worker is running, you should see a timestamp for each function as it executes. I included a print statement for each tasks so that i could easily see which one was being executed. Here's what that looks like:</p>
+<p>Now if you look back at the window where your worker is running, you should see a timestamp for each function as it executes. I included a print statement for each task so that I could easily see which one was being executed. Here's what that looks like:</p>
 <center><img src="/img/taskexecuted.png" alt=""/></center>
 
 <h2>In conclusion</h2>
-<p>That's all it takes to set up Celery with a flask application. Hopefully someone found this helpful.</p>
+<p>That's all it takes to set up Celery with a flask application. It's a powerful little tool that can be applied to much more than what I've demonstrated here, so be sure to experiment. TLDR coming soon!</p>
