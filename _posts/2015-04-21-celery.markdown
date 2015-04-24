@@ -10,7 +10,6 @@ header-img: "img/celery.JPG"
     .code {
         color: darkred;
         font-family: Monaco, arial;
-        text-align: center;
     }
 </style>
 <h1>Celery and Flask</h1>
@@ -65,7 +64,7 @@ header-img: "img/celery.JPG"
 </center>
 
 <p>And that's it! Now in the same file you can add the functions you want to run at regular intervals, and register them as tasks for celery using the decorator <b>@celery.task</b>. Here's what the file looks like for Steamscout:</p>
-<center><img src="img/celeryobject.png" alt=""></center><br>
+<center><img src="/img/celeryobject.png" alt=""/></center><br>
 
 <h2>Celery settings</h2>
 <p>Your celery object needs some configuration before it can go to work for you. In your settings file create the following:<p>
