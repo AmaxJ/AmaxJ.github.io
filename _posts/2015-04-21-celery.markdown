@@ -2,7 +2,7 @@
 layout:     post
 title:      "Automated Tasks with Celery and Flask"
 subtitle:   "A mini-tutorial"
-date:       2015-04-23 12:00:00
+date:       2015-04-24 12:00:00
 author:     "Alan"
 header-img: "img/celery.JPG"
 ---
