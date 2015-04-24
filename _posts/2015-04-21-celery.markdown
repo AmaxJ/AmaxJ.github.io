@@ -8,7 +8,7 @@ header-img: "img/celery.JPG"
 ---
 <style>
     .code {
-        color:red;
+        color: darkred;
         font-family: Monaco, arial;
     }
 </style>
@@ -46,7 +46,8 @@ header-img: "img/celery.JPG"
 
 <p>Once you have redis installed, open up a new terminal window and run <b>"redis-server"</b> to start it up. Not to bad! You should see this in your terminal window:</p>
 
-<center><img src="img/redis.png"></center>
+![alt text](img/redis.png)
+</center>
 
 <p>Note the port location: <b>6379</b>. This will be important for when you configure the broker URL in your settings. Also note this is the address on your local machine only, and if you deploy to a platform this URL will be different.</p><br>
 
@@ -70,7 +71,7 @@ header-img: "img/celery.JPG"
     <ul>
         <li class="code">BROKER_URL = 'redis://localhost:6379/0'</li><br>
         <ul>
-            <li>Remember when I said to note the port number for your redis server? There it is. This setting allows your celery object to connect to your message broker. Just remember that every time you want to run celery you need to also run a redis server.</li>
+            <li>Remember when I said to note the port number for your redis server? There it is. This setting allows your celery object to connect to your message broker. Just remember that every time you want to run a celery worker you also need to run a redis server.</li>
         </ul><br>
         <li class="code">CELERY_RESULT_BACKEND = 'redis://localhost:6479/0'</li><br>
         <ul>
