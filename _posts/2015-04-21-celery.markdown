@@ -63,16 +63,16 @@ header-img: "img/celery.jpg"
 <h2>Celery settings</h2>
 <p>Your celery object needs some configuration before it can go to work for you. In your settings file create the following:<p>
     <ul>
-        <li><b>BROKER_URL = 'redis://localhost:6379/0'</b></li>
+        <li><b>BROKER_URL = 'redis://localhost:6379/0'</b></li><br>
         <ul>
             <li>Remember when I said to note the port number for your redis server? There it is. This setting allows your celery object to connect to your message broker. Just remember that every time you want to run celery you need to also run a redis server.</li>
         </ul><br>
-        <li><b>CELERY_RESULT_BACKEND = 'redis://localhost:6479/0'</b></li>
+        <li><b>CELERY_RESULT_BACKEND = 'redis://localhost:6479/0'</b></li><br>
         <ul>
             <li>This is for storing the results from the tasks celery is executing for you. Depending on what you're using celery for, you may not need this.</li>
         </ul><br>
         <li><b>CELERY_TASK_SERIALIZER = 'json'</b></li><br>
-        <li><b>CELERYBEAT_SCHEDULE = {}</b></li>
+        <li><b>CELERYBEAT_SCHEDULE = {}</b></li><br>
         <ul>
             <li>This is where the magic happens. The CELERYBEAT setting is where you can designate when and how often you want your tasks to run. More detail on this setting in the next part.</li>
         </ul>
@@ -83,19 +83,19 @@ header-img: "img/celery.jpg"
     <center><img src="img/celerybeat.png" alt=""></center>
     <p>Lets break down whats happening here. Check out the first setting:</p>
     <ul>
-        <li>'reset_game_database'</li>
+        <li>'reset_game_database'</li><br>
         <ul>
             <li>This name has no significance except for you and others reading your code. You can assign any name for your task, although it's probably a good idea to have the name reflect what the task does.</li>
         </ul><br>
-        <li><b>'task':'scheduler.reset_game_db'</b></li>
+        <li><b>'task':'scheduler.reset_game_db'</b></li><br>
         <ul>
             <li>The 'task' is the function itself. The value for this key is of the format <b>[file_name].[function_name]</b>. In this instance, the file is "scheduler.py" and the function is "reset_game_db".</li>
         </ul><br>
-        <li><b>'schedule':crontab(minute=0, hour=2)</b></li>
+        <li><b>'schedule':crontab(minute=0, hour=2)</b></li><br>
         <ul>
             <li>The crontab is what actually keeps track of when your task is going to be executed. hour=2 indicates that this task will execute on the 2nd hour (out of 24, think military time) of every day. <a href="http://celery.readthedocs.org/en/latest/userguide/periodic-tasks.html#id5">Go here</a> and scroll down to "Crontab schedules" to see a more detailed list of the possible arguments you can use to set up a schedule. It's pretty flexible!</li>
         </ul><br>
-        <li><b>'args':()</b></li>
+        <li><b>'args':()</b></li><br>
         <ul>
             <li>Now if the function which you've designated to be a celery task has any arguments, you'd put them here. reset_game_db() doens't have any, so I left this blank.</li>
         </ul>
@@ -106,7 +106,7 @@ header-img: "img/celery.jpg"
 <h2>Running a worker, starting a Beat</h2>
 <p>The documentation for celery instructs you to run the following command in a new terminal to launch your celery worker:</p>
 <center>
-    <p><b>celery -A [file_with_celery_object] worker</p>
+    <p><b>celery -A [file_with_celery_object] worker</b></p>
 </center>
 <p>When i did this however, I got an AttributeError saying 'Flask' object has no attribute 'user_options'. Why this occurred is beyond my knowledge, but I did find a fix. Rather than just specifying the file with your celery object, include the name of the celery object as well:</p>
 <center>
