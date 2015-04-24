@@ -46,7 +46,7 @@ header-img: "img/celery.JPG"
 
 <p>Once you have redis installed, open up a new terminal window and run <b>"redis-server"</b> to start it up. Not to bad! You should see this in your terminal window:</p>
 
-![alt text](img/redis.png)
+![Alt text](img/redis.png)
 </center>
 
 <p>Note the port location: <b>6379</b>. This will be important for when you configure the broker URL in your settings. Also note this is the address on your local machine only, and if you deploy to a platform this URL will be different.</p><br>
