@@ -46,9 +46,7 @@ header-img: "img/celery.JPG"
 
 <p>Once you have redis installed, open up a new terminal window and run <b>"redis-server"</b> to start it up. You should see this in your terminal window:</p>
 
-<center>
-![alt text](/img/redis.png)
-</center>
+<center><img src="/img/redis.png" alt=""/></center>
 
 <p>Note the port location: <b>6379</b>. This will be important for when you configure the broker URL in your settings. Also note this is the address on your local machine only, and if you deploy to a platform this URL will be different.</p><br>
 
@@ -87,7 +85,7 @@ header-img: "img/celery.JPG"
 
 <h3>Celerybeat</h3>
     <p>Here's the Steamscout celerybeat configuration:</p>
-    <center><img src="img/celerybeat.png" alt=""></center>
+    <center><img src="/img/celerybeat.png" alt=""/></center>
     <p>Lets break down whats happening here. Check out the first setting:</p>
     <ul>
         <li class="code">'reset_game_database'</li><br>
@@ -121,15 +119,15 @@ header-img: "img/celery.JPG"
 </center>
 
 <p>In my case, this looked like <span class="code">celery -A scheduler.celery worker</span>. If you've been following along, you should see something like this:</p>
-<center><img src="img/celeryrun.png" alt=""></center>
+<center><img src="/img/celeryrun.png" alt=""/></center>
 <p>Now the last thing to do is run the celery beat, so that your worker can get assigned tasks at the interval you specified. In a separate terminal, run:</p>
 <center>
     <p class="code">celery -A [file_with_celery_object].[celery_object_name] beat</p>
 </center>
 <p>If it worked, you'll see something like this:</p>
-<center><img src="img/celerybeatcli.png" alt=""></center>
+<center><img src="/img/celerybeatcli.png" alt=""/></center>
 <p>Now if you look back at the window where your worker is running, you should see a timestamp for each function as it executes. I included a print statement for each tasks so that i could easily see which one was being executed. Here's what that looks like:</p>
-<center><img src="img/taskexecuted.png" alt=""></center>
+<center><img src="/img/taskexecuted.png" alt=""/></center>
 
 <h2>In conclusion</h2>
 <p>That's all it takes to set up Celery with a flask application. Hopefully someone found this helpful.</p>
