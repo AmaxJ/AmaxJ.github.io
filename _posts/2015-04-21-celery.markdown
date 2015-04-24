@@ -4,7 +4,7 @@ title:      "Automated Tasks with Celery and Flask"
 subtitle:   "A mini-tutorial"
 date:       2015-04-24 12:00:00
 author:     "Alan"
-header-img: "img/celery.jpg"
+header-img: "img/celery.JPG"
 ---
 
 <h1>Celery and Flask</h1>
@@ -47,13 +47,9 @@ header-img: "img/celery.jpg"
 
 <h2>Instantiating a Celery object</h2>
 <p> The next step in this process is to create a celery object. I called this object 'celery' for obvious reasons, and for the rest of the article the object will be refered to this way. If you use a different name, remember to substitute it in. Anyway, this part will look familiar to you if you've been using python for a little bit:</p>
-<center>
-```python
 
-celery = Celery('tasks')
+<center><p><b>celery = Celery('tasks')</b></p></center>
 
-```
-</center>
 <p>Steamscout had a separate config.py file where we had all the configurations for the app. The celery configurations were housed there as well. Routing those settings to the celery object is as simple as:</p>
 <center>
     <p><b>celery.config_from_object('config')</b>
@@ -87,7 +83,7 @@ celery = Celery('tasks')
     <center><img src="img/celerybeat.png" alt=""></center>
     <p>Lets break down whats happening here. Check out the first setting:</p>
     <ul>
-        <li>'reset_game_database'</li><br>
+        <li><b>'reset_game_database'<b></li><br>
         <ul>
             <li>This name has no significance except for you and others reading your code. You can assign any name for your task, although it's probably a good idea to have the name reflect what the task does.</li>
         </ul><br>
