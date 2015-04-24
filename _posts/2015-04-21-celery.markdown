@@ -10,6 +10,7 @@ header-img: "img/celery.JPG"
     .code {
         color: darkred;
         font-family: Monaco, arial;
+        text-align: center;
     }
 </style>
 <h1>Celery and Flask</h1>
@@ -46,16 +47,15 @@ header-img: "img/celery.JPG"
 
 <p>Once you have redis installed, open up a new terminal window and run <b>"redis-server"</b> to start it up. You should see this in your terminal window:</p>
 
-<center>
+
 ![alt text](/img/redis.png)
-</center>
 
 <p>Note the port location: <b>6379</b>. This will be important for when you configure the broker URL in your settings. Also note this is the address on your local machine only, and if you deploy to a platform this URL will be different.</p><br>
 
 <h2>Instantiating a Celery object</h2>
 <p> The next step in this process is to create a celery object. I called this object 'celery' for obvious reasons, and for the rest of the article the object will be refered to this way. If you use a different name, remember to substitute it in. Anyway, this part will look familiar to you if you've been using python for a little bit:</p>
 
-<center><p class="code">celery = Celery('tasks')</p></center>
+<p class="code">celery = Celery('tasks')</p>
 
 <p>Steamscout had a separate config.py file where we had all the configurations for the app. The celery configurations were housed there as well. Routing those settings to the celery object is as simple as:</p>
 <center>
