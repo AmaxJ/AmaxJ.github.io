@@ -19,3 +19,14 @@ header-img: "img/frustration.jpg"
 <p>My focus will primarily be on things related to web development and technology, although I won't necessarily chain myself to those topics. I'll try to discuss the things I'm working on, and if someone else finds anything I've written to be helpful then I will consider this exercise to be a success.</p>
 
 <p>So that's all for my first post. I hope to get into some interesting things in the near future.</p>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62213278-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
