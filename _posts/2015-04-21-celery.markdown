@@ -48,8 +48,10 @@ header-img: "img/celery.jpg"
 <h2>Instantiating a Celery object</h2>
 <p> The next step in this process is to create a celery object. I called this object 'celery' for obvious reasons, and for the rest of the article the object will be refered to this way. If you use a different name, remember to substitute it in. Anyway, this part will look familiar to you if you've been using python for a little bit:</p>
 <center>
-```
+```python
+
 celery = Celery('tasks')
+
 ```
 </center>
 <p>Steamscout had a separate config.py file where we had all the configurations for the app. The celery configurations were housed there as well. Routing those settings to the celery object is as simple as:</p>
