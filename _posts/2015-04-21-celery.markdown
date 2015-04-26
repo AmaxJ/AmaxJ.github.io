@@ -18,7 +18,7 @@ header-img: "img/celery.JPG"
 
 <h2>Lets automate!</h2>
 
-<p>Earlier this year I participated in building a web-application called <a href="http://steamscout.herokuapp.com/">SteamScout</a> as a final project for <a href="http://rmotr.com/">RMOTR</a>'s' advanced python course. The app allows users to track games on Steam and receive an email alert when the game's price drops below a certain point. Breaking this problem down made it apparent we'd have to automate a few things. We narrowed it down to two tasks:</p>
+<p>Earlier this year I participated in building a web-application called <a href="http://steamscout.herokuapp.com/">SteamScout</a> as a final project for the <a href="http://rmotr.com/">RMOTR</a> advanced python course. The app allows users to track games on Steam and receive an email alert when the game's price drops below a certain point. Breaking this problem down made it apparent we'd have to automate a few things. We narrowed it down to two tasks:</p>
 <ul>
     <li><b>Updating the games database:</b></li><br>
         <ul>
