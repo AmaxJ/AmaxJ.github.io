@@ -18,7 +18,7 @@ header-img: "img/django/shovel.jpg"
 
 <h1>#Django</h1>
 
-<p>So that long, dramatic intro was about me starting with the Django web-framework. Just like in that wonderfully crafted snow-shoveling visualization, I decided to just jump in. I wanted to hit the ground running, so I went through the official tutorial in about two days, and then got myself involved in an existing project.</p>
+<p>So that long, dramatic intro was about me starting with the Django web-framework. Just like in that wonderfully crafted snow-shoveling metaphor, I decided to just jump in. I wanted to hit the ground running, so I went through the official tutorial in about two days, and then got myself involved in an existing project.</p>
 
 <p>I want to note: coming from flask a lot of things made sense to me right out of the box. Views, models, and templates felt like old friends who I hadn't seen in a while, who'd grown beards and gotten married since we'd last hung out. At first I reeled when I saw how Django handles URL routing, but once I understood the pattern it wasn't bad at all (I still just need to learn regular expressions though.) Pretty much for each thing Django does, I make a mental comparison to how I'd do it in flask. Like learning a new language, I'm looking forward to just thinking in Django.</p>
 
