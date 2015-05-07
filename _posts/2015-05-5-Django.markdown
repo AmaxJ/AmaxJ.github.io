@@ -33,7 +33,7 @@ header-img: "img/django/shovel.jpg"
 <center><img src="/img/django/karate-kid.jpg" alt="We use class based views on this project!"></center><br><br>
 
 <h3>Let's look at the evolution of my views: </h3><br>
-<center><img src="/img/django/initialview.png" alt=""></center>
+<center><img src="/img/django/initialView.png" alt=""></center>
 
 <p>So to the trained eye there are a few things about this that immediately stand out as sub-optimal or just wrong. Lets break it down:</p>
 
