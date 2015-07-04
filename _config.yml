@@ -1,8 +1,8 @@
 # Site settings
-title: from Blog import *
-header-img: "img/tank_banner.jpg"
+title: "#Alan Johnson"
+header-img: "img/greenbanner.jpg"
 email: Ajohnson88@gmail.com
-description: "A blog about my quest to become a developer."
+description: "My blog and portfolio page"
 baseurl: ""
 url: "http://yourdomain.com"
 twitter_username: Amjohnson88
